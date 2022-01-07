@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "sangjuDajung";
+  font-display: fallback;
+
+  src: url("./SANGJU\ Dajungdagam.ttf") format("truetype");
+}
+@font-face {
+  font-family: "sangjuGotgam";
+  font-display: fallback;
+
+  src: url("./SANGJU\ Gotgam.ttf") format("truetype");
+}
+@font-face {
+  font-family: "orelega";
+  font-display: fallback;
+
+  src: url("./OrelegaOne-Regular.ttf") format("truetype");
+}

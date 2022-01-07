@@ -1,65 +1,54 @@
 import React, { useState } from "react";
-import Container from "@material-ui/core/Container";
-import Button from "@material-ui/core/Button";
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from "@mui/styles";
 import styled from "styled-components";
+import RiverFord from "assets/image/RiverFord.jpg";
 
 const useStyles = makeStyles((theme) => {
   return {
-    CommonBox: {
-      border: "1px solid red",
-      backgroundColor: "blue",
+    App: {
+      width: "100vw",
+      height: "100vh",
+      backgroundImage: `url(${RiverFord})`,
+      backgroundPosition: "center",
+      backgroundSize: "100% 100%",
+      backgroundAttachment: "fixed",
     },
-    SpecialBox: {
-      border: "1px solid pink",
-      backgroundColor: "gray",
+    BlackShade: {
+      width: "100%",
+      height: "100%",
+      backgroundColor: "black",
+      zIndex: "100",
+      opacity: 0.7,
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
     },
-    ThemeBox: {
-      border: `3px solid ${theme.palette.mantis}`,
-      backgroundColor: theme.palette.spindle,
+    Title: {
+      color: "white",
+      fontSize: "120px",
+      textAlign: "center",
+      fontFamily: "orelega",
+      "& .C": {
+        color: "red",
+      },
     },
   };
 });
 
-const SDiv = styled(Button)`
-  border: 1px solid blue;
-  background-color: red;
-`;
-
 const Main = () => {
   const classes = useStyles();
 
-  const [clickstate, setState] = useState(false);
-  console.log("전역 clickstate = " + clickstate);
-
-  function clickEvent() {
-    setState(!clickstate);
-  }
-
   return (
-    <div className="App">
-      <Container fixed>
-        머테리얼 유아이를 사용해서 화면들을 만들어 봅시다.
-        <div>
-          <Link to={`/FirstPage/${clickstate}`}>
-            <Button variant="contained" color="secondary">
-              다음 페이지로
-            </Button>
-          </Link>
+    <div className={classes.App}>
+      <div className={classes.BlackShade}>
+        <div className={classes.Title}>
+          <span className="C">C</span>YPHERS LIBRARY
         </div>
-        {/* <div style={{border:"1px solid blue", backgroundColor:theme.palette.spindle}} onClick={clickEvent} clickstate={clickstate}>
-          저를 누른 채로 다음 페이지로 넘어가면 놀라운 일이 생길지도 모릅니다.
-        </div> */}
-        <div className={classes.CommonBox}>
-          저는 일반 박스예요. 빨간 바탕에 파란 채우기예요.
-        </div>
-        <div className={classes.SpecialBox}>
-          저는 스페셜 박스예요. 핑크 바탕에 회색 채우기예요.
-        </div>
-        <div className={classes.ThemeBox}>저는 테마를 이용한 박스입니다.</div>
-        <SDiv>스타일드 컴퍼넌트 버튼</SDiv>
-      </Container>
+      </div>
     </div>
   );
 };
