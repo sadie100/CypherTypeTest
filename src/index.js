@@ -21,9 +21,9 @@ ReactDOM.render(
           <Route path="/main">
             <Main />
           </Route>
-          {/* <Route path="/FirstPage/:clickstate">
-            <FirstPage />
-          </Route> */}
+          <Route path="/">
+            <Main />
+          </Route>
         </ThemeProvider>
       </Switch>
     </Router>
