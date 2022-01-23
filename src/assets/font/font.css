@@ -16,3 +16,15 @@
 
   src: url("./OrelegaOne-Regular.ttf") format("truetype");
 }
+@font-face {
+  font-family: "jua";
+  font-display: fallback;
+
+  src: url("./BMJUA_ttf.ttf") format("truetype");
+}
+@font-face {
+  font-family: "nanumLight";
+  font-display: fallback;
+
+  src: url("./NanumSquareR.ttf") format("truetype");
+}
