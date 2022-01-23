@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => {
     },
   };
 });
+
 const Page1 = () => {
   const classes = useStyles();
   return (
