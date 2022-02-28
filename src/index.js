@@ -30,7 +30,7 @@ ReactDOM.render(
               <Container>
                 <Route exact path="/" component={Main} />
                 <Route path="/test/:qs" component={Test} />
-                <Redirect path="/test" to="/test/1" />
+                {/* <Redirect path="/test" to="/test/1" /> */}
               </Container>
             </ThemeProvider>
           </Switch>

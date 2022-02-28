@@ -2,9 +2,10 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Header from "components/base/Header";
 import { styled } from "@mui/styles";
 import { QuestionData } from "pages/test/QuestionData";
-import { NormalText } from "components/styledComponent/TextDiv";
+import { NormalText } from "components/styledComponent/common";
 import { useSelector, useDispatch } from "react-redux";
 import { decrement, increment } from "store/pointSlice";
+import * as styledComp from "components/styledComponent/common";
 
 const Wrapper = styled("div")({
   zIndex: "200",
@@ -16,17 +17,46 @@ const Wrapper = styled("div")({
   width: "100%",
   height: "100%",
 });
-const Question = styled("div")({
-  color: "white",
+const WrapperDiv = styled(styledComp.quesFontDiv)(({ theme }) => ({
+  color: "black",
   fontFamily: "nanumBarun",
-  fontSize: "1rem",
+  fontWeight: "bolder",
   textAlign: "left",
-});
-const Answer = styled("div")({
-  color: "white",
+  border: "1px solid white",
+  borderRadius: "10px",
+  padding: "1rem",
+  paddingBottom: "2rem",
+  backgroundColor: "white",
+  zIndex: "200",
+  width: "100%",
+  backgroundImage: "none",
+  "& .redQ": {
+    color: theme.palette.cyphers,
+    fontWeight: "bolder",
+    fontFamily: "jua",
+    textShadow: "2px 2px 2px gray",
+  },
+  "& .yellowA": {
+    color: theme.palette.cyphers_y,
+    fontWeight: "bolder",
+    fontFamily: "jua",
+    textShadow: "2px 2px 2px gray",
+  },
+}));
+const AnswerWrapper = styled("div")(({ theme }) => ({
+  width: "100%",
+  display: "flex",
+  gap: "0.5rem",
+  flexDirection: "column",
+}));
+const Answer = styled(styledComp.ansFontDiv)({
+  color: "black",
+  width: "100%",
+  borderRadius: "20px",
+  backgroundColor: "lightgray",
+  padding: "1rem",
   fontFamily: "nanumBarun",
-  fontSize: "1rem",
-  textAlign: "left",
+  textAlign: "center",
 });
 
 const Test = (props) => {
@@ -46,14 +76,23 @@ const Test = (props) => {
     <>
       <Header />
       <Wrapper>
-        <Question>{QuestionData()[qsNum].quiz}</Question>;
-        {QuestionData()[qsNum].ans.map((select, idx) => {
-          return (
-            <Answer index={idx} id={idx} onClick={handleClickAns}>
-              {select}
-            </Answer>
-          );
-        })}
+        <WrapperDiv>
+          <div className="redQ">Q.</div>
+          {QuestionData()[qsNum].quiz}
+        </WrapperDiv>
+        ;
+        <WrapperDiv>
+          <AnswerWrapper>
+            <div className="yellowA">A.</div>
+            {QuestionData()[qsNum].ans.map((select, idx) => {
+              return (
+                <Answer index={idx} id={idx} onClick={handleClickAns}>
+                  {select}
+                </Answer>
+              );
+            })}
+          </AnswerWrapper>
+        </WrapperDiv>
       </Wrapper>
     </>
   );

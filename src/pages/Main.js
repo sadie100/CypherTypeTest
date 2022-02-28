@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { makeStyles } from "@mui/styles";
 import { useHistory } from "react-router-dom";
-import { NormalText, Title } from "components/styledComponent/TextDiv";
-import { StyledButton } from "components/styledComponent/FormComponents";
+import {
+  StyledButton,
+  NormalText,
+  Title,
+} from "components/styledComponent/common";
 import Container from "components/base/Container";
 
 const useStyles = makeStyles((theme) => {

@@ -20,6 +20,8 @@ const BlackShade = styled("div")({
 const App = styled("div")({
   padding: "0.5rem",
   display: "flex",
+  backgroundColor: "black",
+  zIndex: "110",
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
@@ -33,14 +35,16 @@ const Container = ({ children }) => {
   useEffect(() => {
     vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
-  }, []);
+  }, [window.innerHeight]);
 
   return (
-    <AppWrapper>
-      <BlackShade>
-        <App>{children}</App>
-      </BlackShade>
-    </AppWrapper>
+    <>
+      <AppWrapper>
+        <BlackShade>
+          <App>{children}</App>
+        </BlackShade>
+      </AppWrapper>
+    </>
   );
 };
 
