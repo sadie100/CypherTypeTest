@@ -1,30 +1,29 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: 0,
+  hardPoint: 0, //빡겜 포인트. 낮을 시 즐겜 포인트
+  partyPoint: 0, //파티지향+소통지향 포인트. 낮을 시 솔플지향+침묵지향 포인트
+  fightPoint: 0, //채금 포인트. 낮음 시 평화지향 포인트
 };
 
 export const pointSlice = createSlice({
   name: "point",
   initialState,
   reducers: {
-    increment: (state) => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
-      state.value += 1;
+    changeHardPoint: (state, action) => {
+      state.hardPoint += action.payload;
     },
-    decrement: (state) => {
-      state.value -= 1;
+    changePartyPoint: (state, action) => {
+      state.partyPoint += action.payload;
     },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload;
+    changeFightPoint: (state, action) => {
+      state.fightPoint += action.payload;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = pointSlice.actions;
+export const { changeHardPoint, changePartyPoint, changeFightPoint } =
+  pointSlice.actions;
 
 export default pointSlice.reducer;

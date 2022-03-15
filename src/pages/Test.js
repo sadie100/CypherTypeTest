@@ -4,7 +4,11 @@ import { styled } from "@mui/styles";
 import { QuestionData } from "pages/test/QuestionData";
 import { NormalText } from "components/styledComponent/common";
 import { useSelector, useDispatch } from "react-redux";
-import { decrement, increment } from "store/pointSlice";
+import {
+  changeHardPoint,
+  changePartyPoint,
+  changeFightPoint,
+} from "store/pointSlice";
 import * as styledComp from "components/styledComponent/common";
 
 const Wrapper = styled("div")({
@@ -68,7 +72,17 @@ const Test = (props) => {
   const dispatch = useDispatch();
 
   const handleClickAns = ({ currentTarget }) => {
-    console.log(currentTarget.id);
+    const answerPoint = JSON.parse(currentTarget.id);
+    if (!!answerPoint?.hardPoint) {
+      dispatch(changeHardPoint(answerPoint.hardPoint));
+    }
+    if (!!answerPoint?.partyPoint) {
+      dispatch(changePartyPoint(answerPoint.partyPoint));
+    }
+    if (!!answerPoint?.fightPoint) {
+      dispatch(changeFightPoint(answerPoint.fightPoint));
+    }
+
     history.push(`/test/${qsNum + 1}`);
   };
 
@@ -86,8 +100,12 @@ const Test = (props) => {
             <div className="yellowA">A.</div>
             {QuestionData()[qsNum].ans.map((select, idx) => {
               return (
-                <Answer index={idx} id={idx} onClick={handleClickAns}>
-                  {select}
+                <Answer
+                  index={idx}
+                  id={JSON.stringify(select.point)}
+                  onClick={handleClickAns}
+                >
+                  {select.text}
                 </Answer>
               );
             })}

@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => {
 
 const Main = () => {
   const handleClick = () => {
-    history.push("/test/1");
+    history.push("/test/0");
   };
   const classes = useStyles();
   const history = useHistory();
