@@ -17,7 +17,8 @@ import { StylesProvider } from "@mui/styles";
 import Container from "components/base/Container";
 import { store } from "store";
 import { Provider } from "react-redux";
-import { Result } from "pages/Result";
+import Result from "pages/Result";
+import Loading from "pages/Loading";
 
 // const k_key = "aa16d24db6390013864861c4ec278c95";
 // if (!window.Kakao.isInitialized()) {
@@ -38,6 +39,7 @@ ReactDOM.render(
               <Container>
                 <Route exact path="/" component={Main} />
                 <Route path="/test/:qs" component={Test} />
+                <Route path="/loading" component={Loading} />
                 <Route path="/result" component={Result} />
                 {/* <Redirect path="/test" to="/test/1" /> */}
               </Container>

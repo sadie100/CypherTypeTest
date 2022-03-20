@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Header from "components/base/Header";
 import { styled } from "@mui/styles";
-import { QuestionData } from "pages/test/QuestionData";
+import { QuestionData } from "pages/datas/QuestionData";
 import { NormalText } from "components/styledComponent/common";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -68,7 +68,6 @@ const Test = (props) => {
   //url 파라미터로 질문 번호 받음
   const qsNum = Number(match.params.qs);
   //리덕스 툴킷으로 point 저장
-  const point = useSelector((state) => state.point.value);
   const dispatch = useDispatch();
 
   const handleClickAns = ({ currentTarget }) => {
@@ -83,7 +82,11 @@ const Test = (props) => {
       dispatch(changeFightPoint(answerPoint.fightPoint));
     }
 
-    history.push(`/test/${qsNum + 1}`);
+    if (qsNum < QuestionData().length - 1) {
+      history.push(`/test/${qsNum + 1}`);
+    } else {
+      history.push("/loading");
+    }
   };
 
   return (

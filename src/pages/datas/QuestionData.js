@@ -2,6 +2,10 @@ export const QuestionData = () => {
   //즐겜 포인트 / 빡겜 포인트
   //파티지향+소통지향 포인트 / 솔플지향+침묵지향 포인트
   //착함 포인트 / 채금 포인트
+  //hard : 6
+  //party: 6
+  //fight : 6
+
   return [
     {
       quiz: "여느 때와 같이 사이퍼즈를 켰습니다. 평소라면 당신은 어떤 게임을 할까요?",
@@ -33,13 +37,13 @@ export const QuestionData = () => {
         {
           text: "혼자 하면 무슨 재미! 외침팟을 구한다.",
           point: {
-            partyPoint: 1,
+            partyPoint: 2,
           },
         },
         {
           text: "사이퍼즈는 솔플이지! 그냥 F6을 누른다.",
           point: {
-            partyPoint: -1,
+            partyPoint: 0,
           },
         },
       ],
@@ -82,7 +86,6 @@ export const QuestionData = () => {
           text: "가르쳐주면 나아지지 않을까? 실수할 때마다 이렇게 했으면 좋겠다고 친절하게 가르쳐 준다.",
           point: {
             fightPoint: -1,
-
             partyPoint: 1,
             hardPoint: 1,
           },
@@ -137,7 +140,7 @@ export const QuestionData = () => {
         {
           text: "근딜을 하고 싶지만 게임도 이기고 싶은걸? 근딜 든 친구에게 양보를 요구한다.",
           point: {
-            hardPoint: -1,
+            hardPoint: 1,
             partyPoint: 1,
           },
         },
@@ -167,8 +170,35 @@ export const QuestionData = () => {
       ],
     },
     {
-      quiz: "",
-      ans: [],
+      quiz: "게임이 너무 ez하게 끝났습니다~ 기분이 좋은데요. 티를 내 볼까요?",
+      ans: [
+        {
+          text: "쉬워 쉬워~ 전챗으로 ez나 ㅅㄱㅇ를 친다",
+          point: {
+            fightPoint: 2,
+          },
+        },
+        {
+          text: "전챗은 좀 그렇지만 티는 내고 싶다! /춤을 춘다.",
+          point: {
+            fightPoint: 1,
+          },
+        },
+        {
+          text: "우리 팀원끼리 기뻐하면 되지! 파티챗으로 팀원끼리 소소하게 기쁨을 나눈다.",
+          point: {
+            fightPoint: -1,
+            partyPoint: 1,
+          },
+        },
+        {
+          text: "뭐라 하긴 쑥스러워! 그냥 재빨리 다음 게임 시작 단축키를 누른다.",
+          point: {
+            fightPoint: -1,
+            partyPoint: -1,
+          },
+        },
+      ],
     },
   ];
 };
