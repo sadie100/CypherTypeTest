@@ -11,17 +11,16 @@ const AppWrapper = styled("div")({
   backgroundAttachment: "fixed",
 });
 const BlackShade = styled("div")({
-  width: "100%",
-  height: "100%",
+  width: "100vw",
+  height: "calc(var(--vh, 1vh) * 100)",
+  position: "fixed",
   backgroundColor: "black",
-  zIndex: "100",
   opacity: 0.7,
 });
 const App = styled("div")({
   padding: "0.5rem",
   display: "flex",
-  backgroundColor: "black",
-  zIndex: "110",
+  backgroundColor: "none",
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
@@ -39,10 +38,9 @@ const Container = ({ children }) => {
 
   return (
     <>
+      <BlackShade />
       <AppWrapper>
-        <BlackShade>
-          <App>{children}</App>
-        </BlackShade>
+        <App>{children}</App>
       </AppWrapper>
     </>
   );

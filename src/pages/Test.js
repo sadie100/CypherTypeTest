@@ -11,16 +11,6 @@ import {
 } from "store/pointSlice";
 import * as styledComp from "components/styledComponent/common";
 
-const Wrapper = styled("div")({
-  zIndex: "200",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "center",
-  gap: "30px",
-  width: "100%",
-  height: "100%",
-});
 const WrapperDiv = styled(styledComp.quesFontDiv)(({ theme }) => ({
   color: "black",
   fontFamily: "nanumBarun",
@@ -92,12 +82,11 @@ const Test = (props) => {
   return (
     <>
       <Header />
-      <Wrapper>
+      <styledComp.Wrapper>
         <WrapperDiv>
           <div className="redQ">Q.</div>
           {QuestionData()[qsNum].quiz}
         </WrapperDiv>
-        ;
         <WrapperDiv>
           <AnswerWrapper>
             <div className="yellowA">A.</div>
@@ -114,7 +103,7 @@ const Test = (props) => {
             })}
           </AnswerWrapper>
         </WrapperDiv>
-      </Wrapper>
+      </styledComp.Wrapper>
     </>
   );
 };

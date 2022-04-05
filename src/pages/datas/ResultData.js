@@ -62,4 +62,5 @@ export const ResultData = (keyword) => {
     default:
       result = {};
   }
+  return result;
 };

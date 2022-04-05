@@ -1,5 +1,15 @@
 import { styled } from "@mui/styles";
 
+export const Wrapper = styled("div")(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: "30px",
+  width: "100%",
+  height: "100%",
+  zIndex: "110",
+}));
 export const NormalText = styled("div")(({ theme }) => ({
   color: "black",
   fontFamily: "nanumBarun",
@@ -9,6 +19,21 @@ export const NormalText = styled("div")(({ theme }) => ({
   fontWeight: "bolder",
   backgroundColor: "white",
   borderRadius: "10px",
+  wordBreak: "break-all",
+  "& .C": {
+    color: theme.palette.cyphers,
+  },
+}));
+export const ImportantText = styled("div")(({ theme }) => ({
+  color: "black",
+  fontFamily: "nanumBarun",
+  fontSize: "1.5rem",
+  textAlign: "center",
+  padding: "2rem 2rem",
+  fontWeight: "bolder",
+  backgroundColor: "white",
+  borderRadius: "10px",
+  border: `5px solid ${theme.palette.cyphers}`,
   wordBreak: "break-all",
   "& .C": {
     color: theme.palette.cyphers,

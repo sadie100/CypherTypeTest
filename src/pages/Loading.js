@@ -5,6 +5,7 @@ import {
   StyledButton,
   NormalText,
   Title,
+  Wrapper,
 } from "components/styledComponent/common";
 import { styled } from "@mui/styles";
 import CircularProgress from "@mui/material/CircularProgress";
@@ -18,22 +19,7 @@ const SmallTitle = styled(Title)(({ theme }) => ({
   fontSize: "1.5rem",
 }));
 
-const useStyles = makeStyles((theme) => {
-  return {
-    wrapper: {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      gap: "30px",
-      width: "80%",
-      height: "100%",
-    },
-  };
-});
-
 const Result = () => {
-  const classes = useStyles();
   const history = useHistory();
   const { hardPoint, partyPoint, fightPoint } = useSelector((state) => ({
     hardPoint: state.point.hardPoint,
@@ -65,7 +51,7 @@ const Result = () => {
   }, []);
 
   return (
-    <div className={classes.wrapper}>
+    <Wrapper>
       <SmallTitle>
         <span className="White">
           결과를 내는 중입니다.<br></br>
@@ -75,7 +61,7 @@ const Result = () => {
           <CircularProgress color="primary" />
         </div>
       </SmallTitle>
-    </div>
+    </Wrapper>
   );
 };
 

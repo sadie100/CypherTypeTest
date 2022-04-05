@@ -5,32 +5,18 @@ import {
   StyledButton,
   NormalText,
   Title,
+  Wrapper,
 } from "components/styledComponent/common";
 import Container from "components/base/Container";
-
-const useStyles = makeStyles((theme) => {
-  return {
-    wrapper: {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      gap: "30px",
-      width: "100%",
-      height: "100%",
-    },
-  };
-});
 
 const Main = () => {
   const handleClick = () => {
     history.push("/test/0");
   };
-  const classes = useStyles();
   const history = useHistory();
 
   return (
-    <div className={classes.wrapper}>
+    <Wrapper>
       <Title>
         <span className="C">사</span>이퍼즈<br></br>
         <span className="White">성향 테스트</span>
@@ -41,7 +27,7 @@ const Main = () => {
         <span className="C">#가보자고</span>
       </NormalText>
       <StyledButton onClick={handleClick}>테스트 시작</StyledButton>
-    </div>
+    </Wrapper>
   );
 };
 
