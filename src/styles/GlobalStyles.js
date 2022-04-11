@@ -8,8 +8,6 @@ const GlobalStyle = createGlobalStyle`
   .C {
     color: "red";
   }
-  body {
-  }
 `;
 
 export default GlobalStyle;

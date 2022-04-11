@@ -1,21 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles } from "@mui/styles";
 import { useHistory, useLocation } from "react-router-dom";
-import KakaoImage from "assets/image/kakao_message_image.png";
 import {
   StyledButton,
   NormalText,
   Title,
+  Content,
   ImportantText,
 } from "components/styledComponent/common";
 import { styled } from "@mui/styles";
 import { useSelector, useDispatch } from "react-redux";
 import qs from "qs";
 import { ResultData } from "pages/datas/ResultData";
-
-const BigNormalText = styled(NormalText)(({ theme }) => ({
-  width: "100%",
-}));
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -43,6 +39,7 @@ const Result = () => {
     ignoreQueryPrefix: true,
   });
   const result = ResultData(query.result);
+
   useEffect(() => {
     createKakaoButton();
   }, []);
@@ -61,25 +58,17 @@ const Result = () => {
       //버튼에 연결
       kakao.Link.createDefaultButton({
         container: "#kakao-link-btn",
-        objectType: "feed",
-        content: {
-          title: "사이퍼즈 플레이 성향 알아보기",
-          description: "테스트를 통해 사이퍼즈 플레이 성향을 알아봅시다.",
-          imageUrl: window.location.origin + KakaoImage,
-          link: {
-            mobileWebUrl: "https://localhost:3000/result",
-          },
+        objectType: "text",
+        text: result.title + "\n" + result.content,
+        link: {
+          mobileWebUrl: `https://localhost:3000/result?result=${result}`,
         },
-        buttons: [
-          {
-            title: "웹으로 이동",
-            link: {
-              mobileWebUrl: "https://localhost:3000",
-            },
-          },
-        ],
       });
     }
+  };
+
+  const handleHome = () => {
+    history.push("/");
   };
   return (
     <div className={classes.wrapper}>
@@ -87,10 +76,28 @@ const Result = () => {
         <span className="C">사</span>이퍼즈<br></br>
         <span className="White">플레이어 성향 결과</span>
       </Title>
-      <br></br>
-      <ImportantText>{result.title}</ImportantText>
-      <BigNormalText>{result.content}</BigNormalText>
-      <StyledButton id="kakao-link-btn">공유하기</StyledButton>
+      <Content>
+        <ImportantText>{result.title}</ImportantText>
+        {result.content}
+      </Content>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "3px",
+          flexDirection: "column",
+        }}
+      >
+        <span style={{ color: "white", fontSize: "13px" }}>결과 공유하기</span>
+        <img
+          id="kakao-link-btn"
+          src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+          alt="카카오링크 보내기 버튼"
+          height="50"
+          width="50"
+        />
+      </div>
+      <StyledButton onClick={handleHome}>첫 화면으로</StyledButton>
     </div>
   );
 };

@@ -12,9 +12,6 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { getResult } from "lib/utils";
 import { useSelector, useDispatch } from "react-redux";
 
-const BigNormalText = styled(NormalText)(({ theme }) => ({
-  width: "100%",
-}));
 const SmallTitle = styled(Title)(({ theme }) => ({
   fontSize: "1.5rem",
 }));

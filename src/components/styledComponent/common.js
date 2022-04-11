@@ -24,20 +24,29 @@ export const NormalText = styled("div")(({ theme }) => ({
     color: theme.palette.cyphers,
   },
 }));
-export const ImportantText = styled("div")(({ theme }) => ({
+export const Content = styled("div")(({ theme }) => ({
   color: "black",
   fontFamily: "nanumBarun",
-  fontSize: "1.5rem",
-  textAlign: "center",
-  padding: "2rem 2rem",
-  fontWeight: "bolder",
+  fontSize: "1.2rem",
+  display: "flex",
+  flexDirection: "column",
+  gap: "1rem",
+  fontWeight: "bold",
+  justifyContent: "center",
+  padding: "1.5rem 1rem",
   backgroundColor: "white",
   borderRadius: "10px",
-  border: `5px solid ${theme.palette.cyphers}`,
   wordBreak: "break-all",
   "& .C": {
     color: theme.palette.cyphers,
   },
+}));
+export const ImportantText = styled("div")(({ theme }) => ({
+  fontSize: "1.5rem",
+  fontWeight: "bolder",
+  wordBreak: "break-all",
+  color: theme.palette.cyphers,
+  textAlign: "center",
 }));
 export const Title = styled("div")(({ theme }) => ({
   color: theme.palette.cyphers_y,
