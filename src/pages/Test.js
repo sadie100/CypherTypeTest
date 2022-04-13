@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Header from "components/base/Header";
 import { styled } from "@mui/styles";
-import { QuestionData } from "pages/datas/QuestionData";
+import { QuestionData } from "pages/datas/QuestionData2";
 import { NormalText } from "components/styledComponent/common";
 import { useSelector, useDispatch } from "react-redux";
 import {
