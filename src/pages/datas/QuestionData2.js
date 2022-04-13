@@ -2,9 +2,9 @@ export const QuestionData = () => {
   //즐겜 포인트 / 빡겜 포인트
   //파티지향+소통지향 포인트 / 솔플지향+침묵지향 포인트
   //착함 포인트 / 채금 포인트
-  //hard : 6
-  //party: 6
-  //fight : 6
+  //hard : -19~23
+  //party: -22~33
+  //fight : -18~23
 
   return [
     {
@@ -13,13 +13,13 @@ export const QuestionData = () => {
         {
           text: "나는 조합을 맞춘 진지한 게임이 좋다. 공식전을 한다.",
           point: {
-            hardPoint: 1,
+            hardPoint: 5,
           },
         },
         {
           text: "마음 편한 게 제일! 일반전을 한다.",
           point: {
-            hardPoint: -1,
+            hardPoint: -3,
           },
         },
       ],
@@ -36,7 +36,7 @@ export const QuestionData = () => {
         {
           text: "사이퍼즈는 솔플이지! 그냥 F6을 누른다.",
           point: {
-            partyPoint: 0,
+            partyPoint: -3,
           },
         },
         {
@@ -92,7 +92,7 @@ export const QuestionData = () => {
           text: "뉴비고 뭐고 팀겜인데 너무 못하는 거 아님? 열받으니 신고를 각오하고 한소리 한다.",
           point: {
             fightPoint: 3,
-            hardPoint: 1,
+            hardPoint: 3,
           },
         },
         {
@@ -119,7 +119,7 @@ export const QuestionData = () => {
         {
           text: "천상계 유튜버의 공략 영상 등으로 캐릭터의 모든 걸 파악한 후 게임한다.",
           point: {
-            hardPoint: 3,
+            hardPoint: 5,
           },
         },
         {
@@ -140,23 +140,31 @@ export const QuestionData = () => {
       quiz: "피폐한 게임 중 막판으로 극공근딜을 하고 싶어 솔플로 일반전에 들어온 당신, 그러나 빡겜 4인팟과 팀으로 매칭이 된 듯 합니다! 투탱까지 서 주면서 조합이 착착 맞춰지는 가운데, 한 명이 자기가 근딜에 자신이 있다면서 양보해 달라고 합니다. 어떻게 할까요?",
       ans: [
         {
-          text: "그렇게 잘한다면야 ... 뭐 ... 양보해 준다",
+          text: "그렇게 잘한다면야 ... 뭐 ... 양보해 준다.",
           point: {
             hardPoint: 3,
+            partyPoint: 3,
+          },
+        },
+        {
+          text: "미안하지만 하고 싶은 건 해야 한다. 못들은 척 무시하고 그대로 픽한다.",
+          point: {
+            hardPoint: -3,
+            partyPoint: -5,
+          },
+        },
+        {
+          text: "투근딜도 킹만하지 않나? 그냥 같이 근딜하자고 파티원을 설득한다.",
+          point: {
+            hardPoint: -3,
             partyPoint: 5,
           },
         },
         {
-          text: "미안하지만 하고 싶은 건 해야 한다. 못들은 척 무시하고 그대로 픽한다",
+          text: "나 막판이야 ㅠㅠ 라고 하며 이해를 구한다.",
           point: {
             hardPoint: -3,
-          },
-        },
-        {
-          text: "투근딜도 킹만하지 않나? 그냥 같이 근딜하자고 파티원을 설득한다",
-          point: {
-            hardPoint: -3,
-            partyPoint: 3,
+            partyPoint: 5,
           },
         },
       ],
@@ -167,13 +175,13 @@ export const QuestionData = () => {
         {
           text: "이 ♡♡가 뭐라는 거임? 같이 쌍욕으로 응수한다.",
           point: {
-            fightPoint: 3,
+            fightPoint: 5,
           },
         },
         {
           text: "욕까진 안 하더라도 그냥 듣고 넘길 순 없는 법. 한소리 한다.",
           point: {
-            fightPoint: 1,
+            fightPoint: 3,
           },
         },
         {
@@ -211,6 +219,72 @@ export const QuestionData = () => {
           point: {
             fightPoint: -5,
             partyPoint: -5,
+          },
+        },
+      ],
+    },
+    {
+      quiz: "일반전에서 팀으로 마음에 드는 사람을 만났습니다..! 재미있고 게임도 잘하는 사람인데요, 이대로 헤어지고 싶지 않아요! 어떻게 할까요?",
+      ans: [
+        {
+          text: "조심스럽게... 같이 하자고... 말해 본다.",
+          point: {
+            partyPoint: 5,
+          },
+        },
+        {
+          text: "바로 같이 하기는 좀 부담스러울 수 있지만... 친구 추가는 할 수 있을지도...! 친구하자고 해 본다.",
+          point: {
+            partyPoint: 3,
+          },
+        },
+        {
+          text: "친구는 쑥스러워...! 그저 다음 판에도 만날 수 있도록 빠르게 게임 재시작을 누른다.",
+          point: {
+            partyPoint: 1,
+          },
+        },
+        {
+          text: "좋은 사람이었다... 그저 가슴에만 묻어 둔다.",
+          point: {
+            partyPoint: -5,
+          },
+        },
+      ],
+    },
+    {
+      quiz: "일반전 솔플을 도는데, 매칭된 우리 팀원 중 굉장한 아가리 파이터가 있습니다...! 한 명이 계속 우리팀 딜 낮은 딜러에게 욕을 하는데요. 어떻게 할까요?",
+      ans: [
+        {
+          text: "못할 수도 있지 뭔 욕까지... 팀챗으로 욕먹는 딜러 편을 들어 준다.",
+          point: {
+            fightPoint: -5,
+            hardPoint: -5,
+            partyPoint: 5,
+          },
+        },
+        {
+          text: "음, 입이 험한 사람이군... 하고 생각하며 그냥 무시한다.",
+          point: {
+            fightPoint: -3,
+            hardPoint: 1,
+            partyPoint: -3,
+          },
+        },
+        {
+          text: "딜 낮은 딜러는 욕 먹어도 싸지 않나? 같이 거든다.",
+          point: {
+            hardPoint: 5,
+            fightPoint: 5,
+            partyPoint: 1,
+          },
+        },
+        {
+          text: "안 그래도 게임 안풀리는데 시끄럽고 짜증난다. 맞서 싸운다.",
+          point: {
+            fightPoint: 5,
+            partyPoint: 1,
+            hardPoint: 3,
           },
         },
       ],

@@ -32,7 +32,7 @@ const Result = () => {
     if (hardPoint >= 3) {
       hardFlag = true;
     }
-    if (partyPoint >= 3) {
+    if (partyPoint >= 10) {
       partyFlag = true;
     }
     if (fightPoint >= 3) {
