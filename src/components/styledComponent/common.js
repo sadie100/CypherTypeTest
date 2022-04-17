@@ -24,7 +24,7 @@ export const NormalText = styled("div")(({ theme }) => ({
     color: theme.palette.cyphers,
   },
 }));
-export const Content = styled("div")(({ theme }) => ({
+export const Content = styled("div")(({ theme, bg_img }) => ({
   color: "black",
   fontFamily: "nanumBarun",
   fontSize: "1.2rem",
@@ -40,6 +40,14 @@ export const Content = styled("div")(({ theme }) => ({
   "& .C": {
     color: theme.palette.cyphers,
   },
+  // minHeight: "20rem",
+}));
+export const BackgroundImage = styled("div")(({ theme, bg_img }) => ({
+  backgroundImage: bg_img && `url(${bg_img})`,
+  backgroundPosition: "center",
+  backgroundSize: "contain",
+  backgroundRepeat: "no-repeat",
+  minHeight: "30rem",
 }));
 export const ImportantText = styled("div")(({ theme }) => ({
   fontSize: "1.5rem",

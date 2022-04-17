@@ -7,11 +7,13 @@ import {
   Title,
   Content,
   ImportantText,
+  BackgroundImage,
 } from "components/styledComponent/common";
 import { styled } from "@mui/styles";
 import { useSelector, useDispatch } from "react-redux";
 import qs from "qs";
 import { ResultData } from "pages/datas/ResultData";
+import { resetPoint } from "store/pointSlice";
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -29,20 +31,15 @@ const useStyles = makeStyles((theme) => {
 });
 
 const Result = () => {
-  const handleClick = () => {
-    history.push("/test/0");
-  };
   const classes = useStyles();
   const history = useHistory();
   const location = useLocation();
+  const dispatch = useDispatch();
   const query = qs.parse(location.search, {
     ignoreQueryPrefix: true,
   });
   const result = ResultData(query.result);
-
-  useEffect(() => {
-    createKakaoButton();
-  }, []);
+  const imgUrl = `/assets/image/${query.result}.png`;
 
   const createKakaoButton = () => {
     // kakao sdk script이 정상적으로 불러와졌으면 window.Kakao로 접근이 가능합니다
@@ -67,6 +64,11 @@ const Result = () => {
     }
   };
 
+  useEffect(() => {
+    dispatch(resetPoint());
+    createKakaoButton();
+  }, []);
+
   const handleHome = () => {
     history.push("/");
   };
@@ -77,6 +79,7 @@ const Result = () => {
         <span className="White">플레이어 성향 결과</span>
       </Title>
       <Content>
+        <BackgroundImage bg_img={imgUrl}></BackgroundImage>
         <ImportantText>{result.title}</ImportantText>
         {result.content}
       </Content>
