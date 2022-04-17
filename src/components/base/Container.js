@@ -4,7 +4,9 @@ import RiverFord from "assets/image/RiverFord.jpg";
 
 const AppWrapper = styled("div")({
   width: "100vw",
-  height: "calc(var(--vh, 1vh) * 100)",
+  // height: "calc(var(--vh, 1vh) * 100)",
+  minHeight: "calc(var(--vh, 1vh) * 100)",
+  display: "flex",
   backgroundImage: `url(${RiverFord})`,
   backgroundPosition: "center",
   backgroundSize: "100% 100%",
@@ -25,13 +27,12 @@ const App = styled("div")({
   alignItems: "center",
   justifyContent: "center",
   width: "100%",
-  height: "100%",
+  // height: "100%",
 });
 
 const Container = ({ children }) => {
-  let vh = 0;
-
   useEffect(() => {
+    let vh = 0;
     vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
   }, [window.innerHeight]);

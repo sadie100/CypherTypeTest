@@ -78,8 +78,8 @@ const Result = () => {
         <span className="C">사</span>이퍼즈<br></br>
         <span className="White">플레이어 성향 결과</span>
       </Title>
+      <BackgroundImage bg_img={imgUrl}></BackgroundImage>
       <Content>
-        <BackgroundImage bg_img={imgUrl}></BackgroundImage>
         <ImportantText>{result.title}</ImportantText>
         {result.content}
       </Content>

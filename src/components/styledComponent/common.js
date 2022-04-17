@@ -43,6 +43,7 @@ export const Content = styled("div")(({ theme, bg_img }) => ({
   // minHeight: "20rem",
 }));
 export const BackgroundImage = styled("div")(({ theme, bg_img }) => ({
+  width: "100%",
   backgroundImage: bg_img && `url(${bg_img})`,
   backgroundPosition: "center",
   backgroundSize: "contain",
