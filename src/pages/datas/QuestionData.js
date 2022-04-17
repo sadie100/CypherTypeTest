@@ -64,7 +64,7 @@ export const QuestionData = () => {
           },
         },
         {
-          text: "일반전이지만 너무 양심이 없지 않나? '픽 꼬라지 예술이네'라고 파티챗을 친다.",
+          text: "일반전이지만 너무 양심이 없지 않나? '픽 꼬라지 예술이네'라고 팀챗을 친다.",
           point: {
             fightPoint: 1,
             hardPoint: 1,
@@ -185,7 +185,7 @@ export const QuestionData = () => {
           },
         },
         {
-          text: "우리 팀원끼리 기뻐하면 되지! 파티챗으로 팀원끼리 소소하게 기쁨을 나눈다.",
+          text: "우리 팀원끼리 기뻐하면 되지! 팀챗으로 팀원끼리 소소하게 기쁨을 나눈다.",
           point: {
             fightPoint: -1,
             partyPoint: 1,
