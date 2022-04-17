@@ -8,7 +8,7 @@ import {
   Title,
   Wrapper,
 } from "components/styledComponent/common";
-import Container from "components/base/Container";
+import { getDomain } from "lib/utils";
 
 const Main = () => {
   const handleClick = () => {
@@ -36,14 +36,14 @@ const Main = () => {
           description: "테스트를 통해 사이퍼즈 플레이 성향을 알아봅시다.",
           imageUrl: window.location.origin + KakaoImage,
           link: {
-            mobileWebUrl: "https://localhost:3000/result",
+            mobileWebUrl: getDomain() + "/result",
           },
         },
         buttons: [
           {
             title: "웹으로 이동",
             link: {
-              mobileWebUrl: "https://localhost:3000",
+              mobileWebUrl: getDomain(),
             },
           },
         ],

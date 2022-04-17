@@ -74,3 +74,7 @@ export const getResult = ({ hardFlag, partyFlag, fightFlag }) => {
   }
   return result;
 };
+
+export const getDomain = () => {
+  return `https://${window.location.host}`;
+};
