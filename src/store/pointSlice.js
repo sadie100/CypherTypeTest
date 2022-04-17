@@ -19,11 +19,20 @@ export const pointSlice = createSlice({
     changeFightPoint: (state, action) => {
       state.fightPoint += action.payload;
     },
+    resetPoint: (state, action) => {
+      state.hardPoint = 0;
+      state.partyPoint = 0;
+      state.fightPoint = 0;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { changeHardPoint, changePartyPoint, changeFightPoint } =
-  pointSlice.actions;
+export const {
+  changeHardPoint,
+  changePartyPoint,
+  changeFightPoint,
+  resetPoint,
+} = pointSlice.actions;
 
 export default pointSlice.reducer;
