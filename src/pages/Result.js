@@ -14,6 +14,7 @@ import { useSelector, useDispatch } from "react-redux";
 import qs from "qs";
 import { ResultData } from "pages/datas/ResultData";
 import { resetPoint } from "store/pointSlice";
+import { getDomain } from "lib/utils";
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -55,11 +56,36 @@ const Result = () => {
       //버튼에 연결
       kakao.Link.createDefaultButton({
         container: "#kakao-link-btn",
-        objectType: "text",
-        text: result.title + "\n" + result.content,
-        link: {
-          mobileWebUrl: `https://localhost:3000/result?result=${result}`,
+        objectType: "feed",
+        content: {
+          title: "사이퍼즈 플레이 성향 결과",
+          description: result.title + "\n" + result.content,
+          imageUrl: window.location.origin + imgUrl,
+          link: {
+            mobileWebUrl: getDomain() + `/result?result=${query.result}`,
+          },
         },
+        
+        buttons: [
+          {
+            title: "결과 보기",
+            link: {
+              mobileWebUrl: getDomain() + `/result?result=${query.result}`,
+            },
+          },
+          {
+            title: "새 테스트",
+            link: {
+              mobileWebUrl: getDomain(),
+            },
+          },
+        ],
+        // container: "#kakao-link-btn",
+        // objectType: "text",
+        // text: result.title + "\n" + result.content,
+        // link: {
+        //   mobileWebUrl: getDomain() + `/result?result=${query.result}`,
+        // },
       });
     }
   };

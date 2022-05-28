@@ -36,7 +36,7 @@ const Main = () => {
           description: "테스트를 통해 사이퍼즈 플레이 성향을 알아봅시다.",
           imageUrl: window.location.origin + KakaoImage,
           link: {
-            mobileWebUrl: getDomain() + "/result",
+            mobileWebUrl: getDomain(),
           },
         },
         buttons: [
