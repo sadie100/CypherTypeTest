@@ -31,7 +31,7 @@ ReactDOM.render(
   <React.StrictMode>
     <StylesProvider injectFirst>
       <Provider store={store}>
-        <Router>
+        <Router basename="/">
           <Switch>
             <ThemeProvider theme={theme}>
               <GlobalStyle />
