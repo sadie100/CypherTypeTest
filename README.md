@@ -1,8 +1,13 @@
 # 사이퍼즈 플레이어 성향 테스트
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**카카오톡 결과 공유가 가능한 게임 플레이 성향 테스트 프로그램**
 
-https://www.cypher-test.com/
+[https://www.cypher-test.com/](https://www.cypher-test.com/)
+
+나는 어떤 타입의 사이퍼즈 플레이어일까요?
+
+성향 테스트를 통해 내가 어떤 캐릭터와 맞는지 알아 봅시다.
+
 
 ## 소스 출처
 
