@@ -1,6 +1,6 @@
 import Header from "components/base/Header";
 import { styled } from "@mui/styles";
-import { QuestionData } from "pages/datas/QuestionData2";
+import QuestionData from "pages/datas/QuestionData";
 import { useDispatch } from "react-redux";
 import {
   changeHardPoint,
@@ -28,7 +28,7 @@ const Test = (props) => {
       dispatch(changeFightPoint(answerPoint.fightPoint));
     }
 
-    if (qsNum < QuestionData().length - 1) {
+    if (qsNum < QuestionData.length - 1) {
       history.push(`/test/${qsNum + 1}`);
     } else {
       history.push("/loading");
@@ -41,17 +41,18 @@ const Test = (props) => {
       <styledComp.Wrapper>
         <WrapperDiv>
           <div className="redQ">Q.</div>
-          {QuestionData()[qsNum].quiz}
+          {QuestionData[qsNum].quiz}
         </WrapperDiv>
         <WrapperDiv>
           <AnswerWrapper>
             <div className="yellowA">A.</div>
-            {QuestionData()[qsNum].ans.map((select, idx) => {
+            {QuestionData[qsNum].ans.map((select, idx) => {
               return (
                 <Answer
                   index={idx}
                   id={JSON.stringify(select.point)}
                   onClick={handleClickAns}
+                  key={`${qsNum}-${idx}`}
                 >
                   {select.text}
                 </Answer>
