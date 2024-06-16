@@ -4,8 +4,7 @@ import RiverFord from "assets/image/RiverFord.jpg";
 
 const AppWrapper = styled("div")({
   width: "100vw",
-  // height: "calc(var(--vh, 1vh) * 100)",
-  minHeight: "calc(var(--vh, 1vh) * 100)",
+  minHeight: "100dvh",
   display: "flex",
   backgroundImage: `url(${RiverFord})`,
   backgroundPosition: "center",
@@ -14,7 +13,7 @@ const AppWrapper = styled("div")({
 });
 const BlackShade = styled("div")({
   width: "100vw",
-  height: "calc(var(--vh, 1vh) * 100)",
+  height: "100dvh",
   position: "fixed",
   backgroundColor: "black",
   opacity: 0.7,
@@ -31,12 +30,6 @@ const App = styled("div")({
 });
 
 const Container = ({ children }) => {
-  useEffect(() => {
-    let vh = 0;
-    vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
-  }, [window.innerHeight]);
-
   return (
     <>
       <BlackShade />
