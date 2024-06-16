@@ -6,7 +6,7 @@ import {
   Title,
   Wrapper,
 } from "components/styledComponent/common";
-import KakaoButton from "components/KakaoButton";
+import KakaoButton from "components/base/KakaoButton";
 import KakaoImage from "assets/image/kakao_message_image.png";
 
 const Main = () => {
