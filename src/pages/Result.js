@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@mui/styles";
-import { useLocation } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import {
   Title,
   Content,
@@ -8,17 +8,22 @@ import {
   BackgroundImage,
 } from "components/styledComponent/common";
 import qs from "qs";
-import { ResultData } from "pages/datas/ResultData";
+import ResultData from "pages/datas/ResultData";
 import KakaoButton from "components/base/KakaoButton";
 import HomeButton from "components/base/HomeButton";
 
 const Result = () => {
   const classes = useStyles();
   const location = useLocation();
+  const history = useHistory();
   const query = qs.parse(location.search, {
     ignoreQueryPrefix: true,
   });
-  const result = ResultData(query.result);
+  const result = ResultData[query.result];
+  if (!result) {
+    history.push("/");
+    return null;
+  }
   const imgUrl = `/assets/image/${query.result}.png`;
 
   return (
