@@ -1,18 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { makeStyles } from "@mui/styles";
+import React from "react";
 import { useHistory } from "react-router-dom";
-import {
-  StyledButton,
-  NormalText,
-  Title,
-  Wrapper,
-} from "components/styledComponent/common";
+import { Title, Wrapper } from "components/styledComponent/common";
 import { styled } from "@mui/styles";
 import CircularProgress from "@mui/material/CircularProgress";
 import { getResult } from "lib/utils";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
-const SmallTitle = styled(Title)(({ theme }) => ({
+const SmallTitle = styled(Title)(() => ({
   fontSize: "1.5rem",
 }));
 
@@ -24,28 +18,10 @@ const Result = () => {
     fightPoint: state.point.fightPoint,
   }));
 
-  const calculate = () => {
-    let hardFlag = false;
-    let partyFlag = false;
-    let fightFlag = false;
-
-    if (hardPoint >= 3) {
-      hardFlag = true;
-    }
-    if (partyPoint >= 10) {
-      partyFlag = true;
-    }
-    if (fightPoint >= 3) {
-      fightFlag = true;
-    }
-    const result = getResult({ hardFlag, partyFlag, fightFlag });
+  setTimeout(function () {
+    const result = calculate({ hardPoint, partyPoint, fightPoint });
     history.push(`/result?result=${result}`);
-  };
-  useEffect(() => {
-    setTimeout(function () {
-      calculate();
-    }, 1000);
-  }, []);
+  }, 1000);
 
   return (
     <Wrapper>
@@ -60,6 +36,23 @@ const Result = () => {
       </SmallTitle>
     </Wrapper>
   );
+};
+
+const calculate = ({ hardPoint, partyPoint, fightPoint }) => {
+  let hardFlag = false;
+  let partyFlag = false;
+  let fightFlag = false;
+
+  if (hardPoint >= 3) {
+    hardFlag = true;
+  }
+  if (partyPoint >= 10) {
+    partyFlag = true;
+  }
+  if (fightPoint >= 3) {
+    fightFlag = true;
+  }
+  return getResult({ hardFlag, partyFlag, fightFlag });
 };
 
 export default Result;
