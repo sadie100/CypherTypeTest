@@ -74,8 +74,3 @@ export const getResult = ({ hardFlag, partyFlag, fightFlag }) => {
   }
   return result;
 };
-
-export const getDomain = () => {
-  return 'https://cypher-test.com';
-  // return `https://${window.location.host}`;
-};
