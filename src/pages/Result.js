@@ -1,35 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { makeStyles } from "@mui/styles";
 import { useHistory, useLocation } from "react-router-dom";
 import {
   StyledButton,
-  NormalText,
   Title,
   Content,
   ImportantText,
   BackgroundImage,
 } from "components/styledComponent/common";
-import { styled } from "@mui/styles";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import qs from "qs";
 import { ResultData } from "pages/datas/ResultData";
 import { resetPoint } from "store/pointSlice";
-import { getDomain } from "lib/utils";
-
-const useStyles = makeStyles((theme) => {
-  return {
-    wrapper: {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      gap: "30px",
-      width: "80%",
-      height: "100%",
-      zIndex: "110",
-    },
-  };
-});
+import KakaoButton from "components/KakaoButton";
 
 const Result = () => {
   const classes = useStyles();
@@ -42,62 +25,10 @@ const Result = () => {
   const result = ResultData(query.result);
   const imgUrl = `/assets/image/${query.result}.png`;
 
-  const createKakaoButton = () => {
-    // kakao sdk script이 정상적으로 불러와졌으면 window.Kakao로 접근이 가능합니다
-    if (window.Kakao) {
-      const kakao = window.Kakao;
-
-      // 중복 initialization 방지
-      if (!kakao.isInitialized()) {
-        // 두번째 step 에서 가져온 javascript key 를 이용하여 initialize
-        kakao.init("aa16d24db6390013864861c4ec278c95");
-      }
-
-      //버튼에 연결
-      kakao.Link.createDefaultButton({
-        container: "#kakao-link-btn",
-        objectType: "feed",
-        content: {
-          title: "사이퍼즈 플레이 성향 결과",
-          description: result.title + "\n" + result.content,
-          imageUrl: window.location.origin + imgUrl,
-          link: {
-            mobileWebUrl: getDomain() + `/result?result=${query.result}`,
-          },
-        },
-        
-        buttons: [
-          {
-            title: "결과 보기",
-            link: {
-              mobileWebUrl: getDomain() + `/result?result=${query.result}`,
-            },
-          },
-          {
-            title: "새 테스트",
-            link: {
-              mobileWebUrl: getDomain(),
-            },
-          },
-        ],
-        // container: "#kakao-link-btn",
-        // objectType: "text",
-        // text: result.title + "\n" + result.content,
-        // link: {
-        //   mobileWebUrl: getDomain() + `/result?result=${query.result}`,
-        // },
-      });
-    }
-  };
-
   useEffect(() => {
     dispatch(resetPoint());
-    createKakaoButton();
-  }, []);
+  }, [dispatch]);
 
-  const handleHome = () => {
-    history.push("/");
-  };
   return (
     <div className={classes.wrapper}>
       <Title>
@@ -109,26 +40,70 @@ const Result = () => {
         <ImportantText>{result.title}</ImportantText>
         {result.content}
       </Content>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "3px",
-          flexDirection: "column",
+      <div className={classes.smallWrapper}>
+        <span className={classes.shareText}>결과 공유하기</span>
+        <KakaoButton {...getKakaoButtonProps({ result, query, imgUrl })} />
+      </div>
+      <StyledButton
+        onClick={() => {
+          history.push("/");
         }}
       >
-        <span style={{ color: "white", fontSize: "13px" }}>결과 공유하기</span>
-        <img
-          id="kakao-link-btn"
-          src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
-          alt="카카오링크 보내기 버튼"
-          height="50"
-          width="50"
-        />
-      </div>
-      <StyledButton onClick={handleHome}>첫 화면으로</StyledButton>
+        첫 화면으로
+      </StyledButton>
     </div>
   );
 };
+
+const getKakaoButtonProps = ({ result, query, imgUrl }) => {
+  return {
+    content: {
+      title: "사이퍼즈 플레이 성향 결과",
+      description: result.title + "\n" + result.content,
+      imageUrl: window.location.origin + imgUrl,
+      link: {
+        mobileWebUrl:
+          process.env.REACT_APP_URL + `/result?result=${query.result}`,
+      },
+    },
+    buttons: [
+      {
+        title: "결과 보기",
+        link: {
+          mobileWebUrl:
+            process.env.REACT_APP_URL + `/result?result=${query.result}`,
+        },
+      },
+      {
+        title: "새 테스트",
+        link: {
+          mobileWebUrl: process.env.REACT_APP_URL,
+        },
+      },
+    ],
+  };
+};
+
+const useStyles = makeStyles(() => {
+  return {
+    wrapper: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: "30px",
+      width: "80%",
+      height: "100%",
+      zIndex: "110",
+    },
+    smallWrapper: {
+      display: "flex",
+      alignItems: "center",
+      gap: "3px",
+      flexDirection: "column",
+    },
+    shareText: { color: "white", fontSize: "13px" },
+  };
+});
 
 export default Result;
