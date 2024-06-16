@@ -1,6 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { styled } from "@mui/styles";
 import RiverFord from "assets/image/RiverFord.jpg";
+
+const Container = ({ children }) => {
+  return (
+    <>
+      <BlackShade />
+      <AppWrapper>
+        <App>{children}</App>
+      </AppWrapper>
+    </>
+  );
+};
 
 const AppWrapper = styled("div")({
   width: "100vw",
@@ -26,18 +37,6 @@ const App = styled("div")({
   alignItems: "center",
   justifyContent: "center",
   width: "100%",
-  // height: "100%",
 });
-
-const Container = ({ children }) => {
-  return (
-    <>
-      <BlackShade />
-      <AppWrapper>
-        <App>{children}</App>
-      </AppWrapper>
-    </>
-  );
-};
 
 export default Container;

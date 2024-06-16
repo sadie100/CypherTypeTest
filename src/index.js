@@ -1,11 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from "./pages/Main";
 import Test from "pages/Test";
 import { ThemeProvider } from "@mui/material/styles";
@@ -23,8 +18,9 @@ import Loading from "pages/Loading";
 if (!window.Kakao.isInitialized()) {
   // JavaScript key를 인자로 주고 SDK 초기화
   window.Kakao.init(process.env.REACT_APP_KAKAO_KEY);
-  // SDK 초기화 여부를 확인하자.
-  console.log(window.Kakao.isInitialized());
+  if (!window.Kakao.isInitialized()) {
+    console.error("Kakao SDK 초기화 실패");
+  }
 }
 ReactDOM.render(
   <React.StrictMode>
@@ -40,7 +36,6 @@ ReactDOM.render(
                 <Route path="/test/:qs" component={Test} />
                 <Route path="/loading" component={Loading} />
                 <Route path="/result" component={Result} />
-                {/* <Redirect path="/test" to="/test/1" /> */}
               </Container>
             </ThemeProvider>
           </Switch>
