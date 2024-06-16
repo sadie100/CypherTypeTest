@@ -1,33 +1,25 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { makeStyles } from "@mui/styles";
-import { useHistory, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import {
-  StyledButton,
   Title,
   Content,
   ImportantText,
   BackgroundImage,
 } from "components/styledComponent/common";
-import { useDispatch } from "react-redux";
 import qs from "qs";
 import { ResultData } from "pages/datas/ResultData";
-import { resetPoint } from "store/pointSlice";
-import KakaoButton from "components/KakaoButton";
+import KakaoButton from "components/base/KakaoButton";
+import HomeButton from "components/base/HomeButton";
 
 const Result = () => {
   const classes = useStyles();
-  const history = useHistory();
   const location = useLocation();
-  const dispatch = useDispatch();
   const query = qs.parse(location.search, {
     ignoreQueryPrefix: true,
   });
   const result = ResultData(query.result);
   const imgUrl = `/assets/image/${query.result}.png`;
-
-  useEffect(() => {
-    dispatch(resetPoint());
-  }, [dispatch]);
 
   return (
     <div className={classes.wrapper}>
@@ -44,13 +36,7 @@ const Result = () => {
         <span className={classes.shareText}>결과 공유하기</span>
         <KakaoButton {...getKakaoButtonProps({ result, query, imgUrl })} />
       </div>
-      <StyledButton
-        onClick={() => {
-          history.push("/");
-        }}
-      >
-        첫 화면으로
-      </StyledButton>
+      <HomeButton />
     </div>
   );
 };

@@ -166,3 +166,12 @@ export const resBtn = styled("button")(({ theme }) => ({
     },
   },
 }));
+
+export const HeaderBtn = styled(resBtn)(({ theme }) => ({
+  color: theme.palette.cyphers,
+  textAlign: "left",
+  padding: "0.5rem 1rem",
+  fontFamily: "jua",
+  border: "1px solid white",
+  borderRadius: "10px",
+}));
