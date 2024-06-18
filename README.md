@@ -2,7 +2,7 @@
 
 **카카오톡 결과 공유가 가능한 게임 플레이 성향 테스트 프로그램**
 
-[https://www.cypher-test.com/](https://www.cypher-test.com/)
+[https://sadie100.github.io/CypherTypeTest/](https://sadie100.github.io/CypherTypeTest/)
 
 나는 어떤 타입의 사이퍼즈 플레이어일까요?
 
