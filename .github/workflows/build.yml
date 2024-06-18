@@ -48,7 +48,7 @@ jobs:
       - name: set .env
         run: |
           echo "REACT_APP_KAKAO_KEY=${{secrets.REACT_APP_KAKAO_KEY}}" >> .env
-          echo "REACT_APP_URL=${{secrets.REACT_APP_URL}}" >> .env
+          echo "REACT_APP_URL=${{vars.REACT_APP_URL}}" >> .env
 
       - name: Set PUBLIC_URL
         run: |
