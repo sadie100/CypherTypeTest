@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.ceed5b76.css",
-    "main.js": "/static/js/main.d6e45b97.js",
-    "static/media/NanumBarunpenR.ttf": "/static/media/NanumBarunpenR.3df0bf0bfd52f36ee4fe.ttf",
-    "static/media/BMJUA_ttf.ttf": "/static/media/BMJUA_ttf.bf12d2d886260d73277b.ttf",
-    "static/media/RiverFord.jpg": "/static/media/RiverFord.68ef70d0abebde4577a9.jpg",
-    "static/media/kakao_message_image.png": "/static/media/kakao_message_image.13020b1924d833bc6bf8.png",
-    "index.html": "/index.html",
-    "main.ceed5b76.css.map": "/static/css/main.ceed5b76.css.map",
-    "main.d6e45b97.js.map": "/static/js/main.d6e45b97.js.map"
+    "main.css": "/CypherTypeTest/static/css/main.3ec29102.css",
+    "main.js": "/CypherTypeTest/static/js/main.de7cd898.js",
+    "static/media/NanumBarunpenR.ttf": "/CypherTypeTest/static/media/NanumBarunpenR.3df0bf0bfd52f36ee4fe.ttf",
+    "static/media/BMJUA_ttf.ttf": "/CypherTypeTest/static/media/BMJUA_ttf.bf12d2d886260d73277b.ttf",
+    "static/media/RiverFord.jpg": "/CypherTypeTest/static/media/RiverFord.68ef70d0abebde4577a9.jpg",
+    "static/media/kakao_message_image.png": "/CypherTypeTest/static/media/kakao_message_image.13020b1924d833bc6bf8.png",
+    "index.html": "/CypherTypeTest/index.html",
+    "main.3ec29102.css.map": "/CypherTypeTest/static/css/main.3ec29102.css.map",
+    "main.de7cd898.js.map": "/CypherTypeTest/static/js/main.de7cd898.js.map"
   },
   "entrypoints": [
-    "static/css/main.ceed5b76.css",
-    "static/js/main.d6e45b97.js"
+    "static/css/main.3ec29102.css",
+    "static/js/main.de7cd898.js"
   ]
 }
