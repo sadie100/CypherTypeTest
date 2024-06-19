@@ -14,7 +14,6 @@ import { store } from "store";
 import { Provider } from "react-redux";
 import Result from "pages/Result";
 import Loading from "pages/Loading";
-import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
 if (!window.Kakao.isInitialized()) {
   // JavaScript key를 인자로 주고 SDK 초기화
@@ -37,7 +36,6 @@ ReactDOM.render(
                 <Route path="/test/:qs" component={Test} />
                 <Route path="/loading" component={Loading} />
                 <Route path="/result" component={Result} />
-                <Redirect to="/" />
               </Container>
             </ThemeProvider>
           </Switch>
