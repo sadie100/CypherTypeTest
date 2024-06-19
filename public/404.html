@@ -7,8 +7,12 @@
   </head>
   <body>
     <script type="text/javascript">
-      // Redirect to index.html
-      window.location.replace("/" + window.location.pathname + window.location.search);
+      // Redirect to index.html while preserving the full path
+      (function() {
+        var currentLocation = window.location;
+        var newUrl = currentLocation.protocol + "//" + currentLocation.host + currentLocation.pathname + currentLocation.search;
+        window.location.replace(newUrl);
+      })();
     </script>
   </body>
 </html>
