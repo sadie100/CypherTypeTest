@@ -24,7 +24,7 @@ const Result = () => {
     history.push("/");
     return null;
   }
-  const imgUrl = `/assets/image/${query.result}.png`;
+  const imgUrl = `${process.env.PUBLIC_URL}/assets/image/${query.result}.png`;
 
   return (
     <div className={classes.wrapper}>
