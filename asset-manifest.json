@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/CypherTypeTest/static/css/main.3ec29102.css",
-    "main.js": "/CypherTypeTest/static/js/main.316e1798.js",
-    "static/media/NanumBarunpenR.ttf": "/CypherTypeTest/static/media/NanumBarunpenR.3df0bf0bfd52f36ee4fe.ttf",
-    "static/media/BMJUA_ttf.ttf": "/CypherTypeTest/static/media/BMJUA_ttf.bf12d2d886260d73277b.ttf",
-    "static/media/RiverFord.jpg": "/CypherTypeTest/static/media/RiverFord.68ef70d0abebde4577a9.jpg",
-    "static/media/kakao_message_image.png": "/CypherTypeTest/static/media/kakao_message_image.13020b1924d833bc6bf8.png",
-    "index.html": "/CypherTypeTest/index.html",
-    "main.3ec29102.css.map": "/CypherTypeTest/static/css/main.3ec29102.css.map",
-    "main.316e1798.js.map": "/CypherTypeTest/static/js/main.316e1798.js.map"
+    "main.css": "$PUBLIC_URL/static/css/main.38f2c4a2.css",
+    "main.js": "$PUBLIC_URL/static/js/main.68e2d55c.js",
+    "static/media/NanumBarunpenR.ttf": "$PUBLIC_URL/static/media/NanumBarunpenR.3df0bf0bfd52f36ee4fe.ttf",
+    "static/media/BMJUA_ttf.ttf": "$PUBLIC_URL/static/media/BMJUA_ttf.bf12d2d886260d73277b.ttf",
+    "static/media/RiverFord.jpg": "$PUBLIC_URL/static/media/RiverFord.68ef70d0abebde4577a9.jpg",
+    "static/media/kakao_message_image.png": "$PUBLIC_URL/static/media/kakao_message_image.13020b1924d833bc6bf8.png",
+    "index.html": "$PUBLIC_URL/index.html",
+    "main.38f2c4a2.css.map": "$PUBLIC_URL/static/css/main.38f2c4a2.css.map",
+    "main.68e2d55c.js.map": "$PUBLIC_URL/static/js/main.68e2d55c.js.map"
   },
   "entrypoints": [
-    "static/css/main.3ec29102.css",
-    "static/js/main.316e1798.js"
+    "static/css/main.38f2c4a2.css",
+    "static/js/main.68e2d55c.js"
   ]
 }
