@@ -17,7 +17,6 @@ import Loading from "pages/Loading";
 
 if (!window.Kakao.isInitialized()) {
   // JavaScript key를 인자로 주고 SDK 초기화
-  console.log("env is:::", process.env.REACT_APP_KAKAO_KEY);
   window.Kakao.init(process.env.REACT_APP_KAKAO_KEY);
   if (!window.Kakao.isInitialized()) {
     console.error("Kakao SDK 초기화 실패");
