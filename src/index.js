@@ -26,7 +26,7 @@ ReactDOM.render(
   <React.StrictMode>
     <StylesProvider injectFirst>
       <Provider store={store}>
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <Switch>
             <ThemeProvider theme={theme}>
               <GlobalStyle />
