@@ -45,7 +45,7 @@ jobs:
         run: npm install
         if: steps.cache.outputs.cache-hit != 'true'
 
-      - name: Set nvironment variables
+      - name: Set environment variables
         run: |
           echo "REACT_APP_KAKAO_KEY=${{ secrets.REACT_APP_KAKAO_KEY }}" >> .env
           echo "REACT_APP_URL=${{ vars.REACT_APP_URL }}" >> .env
@@ -53,9 +53,7 @@ jobs:
           echo "PUBLIC_URL=$PUBLIC_URL" >> .env
 
       - name: Build project
-        run: |
-          ls -al .env
-          npm run build
+        run: npm run build
 
       # 빌드된 파일들(./build)을 gh-pages 브랜치로 배포합니다.
       - uses: peaceiris/actions-gh-pages@v4
