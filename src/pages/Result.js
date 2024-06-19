@@ -53,8 +53,8 @@ const getKakaoButtonProps = ({ result, query, imgUrl }) => {
       description: result.title + "\n" + result.content,
       imageUrl: window.location.origin + imgUrl,
       link: {
-        webURL: process.env.REACT_APP_URL + `/result?result=${query.result}`,
-        mobileWebURL:
+        webUrl: process.env.REACT_APP_URL + `/result?result=${query.result}`,
+        mobileWebUrl:
           process.env.REACT_APP_URL + `/result?result=${query.result}`,
       },
     },
@@ -62,16 +62,16 @@ const getKakaoButtonProps = ({ result, query, imgUrl }) => {
       {
         title: "결과 보기",
         link: {
-          webURL: process.env.REACT_APP_URL + `/result?result=${query.result}`,
-          mobileWebURL:
+          webUrl: process.env.REACT_APP_URL + `/result?result=${query.result}`,
+          mobileWebUrl:
             process.env.REACT_APP_URL + `/result?result=${query.result}`,
         },
       },
       {
         title: "새 테스트",
         link: {
-          webURL: process.env.REACT_APP_URL,
-          mobileWebURL: process.env.REACT_APP_URL,
+          webUrl: process.env.REACT_APP_URL,
+          mobileWebUrl: process.env.REACT_APP_URL,
         },
       },
     ],

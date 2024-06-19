@@ -37,8 +37,8 @@ const buttonContent = {
   description: "테스트를 통해 사이퍼즈 플레이 성향을 알아봅시다.",
   imageUrl: window.location.origin + KakaoImage,
   link: {
-    webURL: process.env.REACT_APP_URL,
-    mobileWebURL: process.env.REACT_APP_URL,
+    webUrl: process.env.REACT_APP_URL,
+    mobileWebUrl: process.env.REACT_APP_URL,
   },
 };
 
@@ -46,8 +46,8 @@ const buttons = [
   {
     title: "웹으로 이동",
     link: {
-      webURL: process.env.REACT_APP_URL,
-      mobileWebURL: process.env.REACT_APP_URL,
+      webUrl: process.env.REACT_APP_URL,
+      mobileWebUrl: process.env.REACT_APP_URL,
     },
   },
 ];
