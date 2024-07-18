@@ -7,7 +7,6 @@ import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "styles/theme";
 import CssBaseline from "@mui/material/CssBaseline";
 import GlobalStyle from "styles/GlobalStyles";
-import "assets/font/font.css";
 import { StylesProvider } from "@mui/styles";
 import Container from "components/base/Container";
 import { store } from "store";
